@@ -38,25 +38,6 @@ void	swap(t_pile **data)
 	*data = element;
 }
 
-// void	rotate(t_pile **data)
-// {
-// 	t_pile	*tmp;
-// 	// int		first;
-
-// 	tmp = *data;
-// 	// first = tmp->num;
-// 	if (!tmp || !tmp->next)
-// 		return ;
-	
-	
-// 	while (tmp->next != NULL)
-// 	{
-// 		tmp->num = tmp->next->num;
-// 		tmp = tmp->next;
-// 	}
-// 	tmp->num = first;
-// }
-
 void	rotate(t_pile **data)
 {
 	t_pile	*current_cell;
@@ -67,7 +48,6 @@ void	rotate(t_pile **data)
 	first = *data;
 	*data = first->next;
 	current_cell = first;
-	printf("rotating %d\n", first->num);
 	while (current_cell->next)
 	{
 		current_cell = current_cell->next;
@@ -83,7 +63,7 @@ void	r_rotate(t_pile **data)
 	tmp = *data;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
-	(*data) = new_element(tmp->num, (*data));
+	(*data) = new_element(tmp->num, tmp->index, (*data));
 	del_last(data);
 }
 
