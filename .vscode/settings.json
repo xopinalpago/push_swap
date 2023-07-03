@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"type_traits": "c",
+		"limits": "c",
+		"compare": "c",
+		"ft_push_swap.h": "c"
+	}
+}

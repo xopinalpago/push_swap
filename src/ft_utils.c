@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 10:37:55 by rmeriau           #+#    #+#             */
-/*   Updated: 2023/06/01 15:19:37 by rmeriau          ###   ########.fr       */
+/*   Updated: 2023/06/13 15:25:19 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long	element_size(t_pile *lst)
 {
-	size_t	size;
+	long	size;
 
 	size = 0;
 	while (lst)
@@ -36,6 +36,22 @@ int	get_min(t_pile **data)
 	{
 		if (tmp->num < min)
 			min = tmp->num;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+int	get_min_cost(t_pile **data)
+{
+	t_pile	*tmp;
+	int		min;
+
+	tmp = *data;
+	min = tmp->cost;
+	while (tmp != NULL)
+	{
+		if (tmp->cost < min)
+			min = tmp->cost;
 		tmp = tmp->next;
 	}
 	return (min);

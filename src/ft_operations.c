@@ -1,4 +1,4 @@
- /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_operations.c                                    :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 11:46:16 by rmeriau           #+#    #+#             */
-/*   Updated: 2023/05/22 11:47:06 by rmeriau          ###   ########.fr       */
+/*   Updated: 2023/06/14 10:10:57 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	r_rotate(t_pile **data)
 	tmp = *data;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
-	(*data) = new_element(tmp->num, tmp->index, (*data));
+	(*data) = new_element(tmp->num, 0, (*data));
 	del_last(data);
 }
 
@@ -82,4 +82,3 @@ void	del_last(t_pile **data)
 	free(curr);
 	tmp->next = NULL;
 }
-
